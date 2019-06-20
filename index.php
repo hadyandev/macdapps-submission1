@@ -26,31 +26,17 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-// $host = "tcp:macd-appserver.database.windows.net";
-// $user = "macdapps@macd-appserver";
-// $pass = "M4cd4pps";
-// $db = "macd-db";
+$host = "macd-appserver.database.windows.net, 1433";
+$user = "macdapps";
+$pass = "M4cd4pps";
+$db = "macd-db";
 
-// try {
-//     $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// } catch (Exception $e) {
-//     echo "Failed: " . $e;
-// }
-
-// PHP Data Objects(PDO) Sample Code:
 try {
-    $conn = new PDO("sqlsrv:server = tcp:macd-appserver.database.windows.net,1433; Database = macd-db", "macdapps", "M4cd4pps");
+    $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
+} catch (Exception $e) {
+    echo "Failed: " . $e;
 }
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "macdapps@macd-appserver", "pwd" => "M4cd4pps", "Database" => "macd-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:macd-appserver.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
 
 if (isset($_POST['submit'])) {
     try {
