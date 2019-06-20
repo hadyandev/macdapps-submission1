@@ -29,7 +29,7 @@
 $host = "macd-appserver.database.windows.net";
 $user = "macdapps";
 $pass = "M4cd4pps";
-$db = "[dbo].[Registration]";
+$db = "dbo.Registration";
 
 try {
     $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
