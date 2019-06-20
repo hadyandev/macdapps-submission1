@@ -26,7 +26,7 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-$host = "macd-appserver.database.windows.net";
+$host = "https://macd-appserver.database.windows.net";
 $user = "macdapps";
 $pass = "M4cd4pps";
 $db = "dbo.Registration";
