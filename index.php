@@ -26,10 +26,10 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-$host = "https://macd-appserver.database.windows.net";
-$user = "macdapps";
+$host = "tcp:macd-appserver.database.windows.net";
+$user = "macdapps@macd-appserver";
 $pass = "M4cd4pps";
-$db = "Registration";
+$db = "macd-db";
 
 try {
     $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
